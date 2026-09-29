@@ -1,0 +1,25 @@
+// Neon Purple Palette
+$primary-neon: #bc13fe;
+$secondary-neon: #7a16f0;
+$accent-neon: #ff00ff;
+$bg-dark: #0a0a0a;
+$bg-card: #121212;
+$text-white: #ffffff;
+$text-muted: #a0a0a0;
+
+// Gradients
+$gradient-neon: linear-gradient(135deg, $primary-neon 0%, $accent-neon 100%);
+$glow-blur: 15px;
+
+// Bootstrap Overrides
+$primary: $primary-neon;
+$body-bg: $bg-dark;
+$body-color: $text-white;
+$link-color: $primary-neon;
+$link-hover-color: $accent-neon;
+
+// Breakpoints (Matching reference logic)
+$breakpoint-mobile: 576px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 992px;
+$breakpoint-large: 1200px;

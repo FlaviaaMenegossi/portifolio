@@ -1,0 +1,114 @@
+#about,
+#skills,
+#projects,
+#contact {
+
+    // Placeholders for now, will expand as I build the HTML
+    .container {
+        padding: 20px;
+    }
+}
+
+#about {
+    @media (max-width: $breakpoint-tablet) {
+        text-align: center;
+
+        .col-md-6 {
+            margin-bottom: 30px;
+        }
+    }
+}
+
+#skills {
+    .skill-card {
+        @media (max-width: $breakpoint-mobile) {
+            padding: 20px;
+
+            i {
+                font-size: 2.5rem;
+            }
+        }
+    }
+}
+
+#projects {
+    .project-card {
+        @media (max-width: $breakpoint-tablet) {
+            max-width: 500px;
+            margin: 0 auto 30px;
+        }
+    }
+}
+
+#contact {
+    .contact-form {
+        @media (max-width: $breakpoint-mobile) {
+            padding: 25px;
+        }
+    }
+}
+
+.skill-card {
+    background: $bg-card;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    transition: 0.3s;
+    border: 1px solid transparent;
+
+    &:hover {
+        border-color: $primary-neon;
+        box-shadow: 0 0 20px rgba($primary-neon, 0.2);
+        transform: translateY(-5px);
+    }
+
+    i {
+        font-size: 3rem;
+        color: $primary-neon;
+        margin-bottom: 15px;
+    }
+}
+
+.project-card {
+    background: $bg-card;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 30px;
+
+    .project-img {
+        height: 250px;
+        background: #222;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .project-info {
+        padding: 25px;
+
+        h3 {
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.contact-form {
+    background: $bg-card;
+    padding: 40px;
+    border-radius: 20px;
+
+    .form-control {
+        background: #1a1a1a;
+        border: 1px solid #333;
+        color: white;
+        padding: 12px;
+
+        &:focus {
+            border-color: $primary-neon;
+            box-shadow: 0 0 10px rgba($primary-neon, 0.3);
+        }
+    }
+}

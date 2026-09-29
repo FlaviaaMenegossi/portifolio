@@ -1,0 +1,22 @@
+@import 'utils/variables';
+
+footer {
+    padding: 50px 0;
+    background: darken($bg-dark, 2%);
+    border-top: 1px solid rgba($primary-neon, 0.1);
+    text-align: center;
+
+    .social-links {
+        margin-bottom: 20px;
+
+        a {
+            font-size: 1.5rem;
+            color: $text-muted;
+            margin: 0 15px;
+
+            &:hover {
+                color: $primary-neon;
+            }
+        }
+    }
+}

@@ -1,0 +1,57 @@
+#hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+
+    .hero-content {
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+
+            @media (max-width: $breakpoint-desktop) {
+                font-size: 3rem;
+            }
+
+            @media (max-width: $breakpoint-mobile) {
+                font-size: 2.5rem;
+            }
+        }
+
+        .role {
+            font-size: 1.5rem;
+            color: $primary-neon;
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+    }
+
+    .hero-img {
+        position: relative;
+
+        display: flex;
+        justify-content: center;
+
+        img {
+            width: 280px;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid $primary-neon;
+            box-shadow: 0 0 30px rgba($primary-neon, 0.5);
+            transition: var(--transition-medium);
+
+            &:hover {
+                transform: scale(1.05);
+                box-shadow: 0 0 50px rgba($primary-neon, 0.8);
+                border-color: $accent-neon;
+            }
+
+            @media (max-width: $breakpoint-desktop) {
+                width: 220px;
+                height: 220px;
+            }
+        }
+    }
+}
