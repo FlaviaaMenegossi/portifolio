@@ -104,4 +104,4 @@ Para atualizar textos, projetos ou habilidades, basta editar os arquivos em `src
 
 - LinkedIn: [linkedin.com/in/flaviamenegossi](https://www.linkedin.com/in/flaviamenegossi/)
 - GitHub: [github.com/FlaviaaMenegossi](https://github.com/FlaviaaMenegossi)
-- E-mail: [flavinha.mene@outlook.com](mailto:flavinha.mene@outlook.com)
+- E-mail: [flavinhamene12@gmail.com](mailto:flavinhamene12@gmail.com)

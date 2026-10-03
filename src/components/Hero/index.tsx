@@ -1,8 +1,8 @@
 import { useRef, type PointerEvent } from 'react';
-import { PiArrowDown, PiPaperPlaneTilt } from 'react-icons/pi';
+import { PiArrowDown, PiWhatsappLogo } from 'react-icons/pi';
 import { SiReact, SiStyledcomponents, SiTypescript } from 'react-icons/si';
 import profileImage from '../../assets/images/flavia.webp';
-import { profile } from '../../data/profile';
+import { profile, whatsappUrl } from '../../data/profile';
 import { useTypewriter } from '../../hooks/useTypewriter';
 import { Container } from '../Container';
 import { NeonButton } from '../NeonButton';
@@ -54,9 +54,15 @@ export function Hero() {
                 Ver projetos
                 <PiArrowDown aria-hidden="true" />
               </NeonButton>
-              <NeonButton href="#contact" variant="outline">
+              <NeonButton
+                href={whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                variant="outline"
+                aria-label="Fale comigo pelo WhatsApp (abre em nova aba)"
+              >
                 Fale comigo
-                <PiPaperPlaneTilt aria-hidden="true" />
+                <PiWhatsappLogo aria-hidden="true" />
               </NeonButton>
               <S.Divider aria-hidden="true" />
               <SocialLinks />
