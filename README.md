@@ -14,7 +14,13 @@
 </p>
 
 <p align="center">
-  <img src="public/og-image.png" alt="Prévia do portfólio de Flavia Menegossi" width="800">
+  <a href="https://flavia-menegossi.vercel.app">
+    <img src="public/og-image.png" alt="Prévia do portfólio de Flavia Menegossi" width="800">
+  </a>
+</p>
+
+<p align="center">
+  <strong>Veja no ar: <a href="https://flavia-menegossi.vercel.app">flavia-menegossi.vercel.app</a></strong>
 </p>
 
 ## Sobre o projeto
