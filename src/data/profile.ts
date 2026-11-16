@@ -15,9 +15,9 @@ export const profile = {
     { value: 24, label: 'sites publicados na Vercel' },
     { value: 6, label: 'projetos em destaque aqui' },
   ],
-  // Envio do formulário: crie um formulário grátis em formspree.io e coloque o ID em VITE_FORMSPREE_ID.
-  // Sem o ID, o formulário abre o app de e-mail com a mensagem pronta.
-  formspreeId: import.meta.env.VITE_FORMSPREE_ID as string | undefined,
+  // Envio do formulário pelo Formspree (o ID é público, aparece no navegador de qualquer forma).
+  // VITE_FORMSPREE_ID, se preenchida, troca o formulário sem mexer no código.
+  formspreeId: (import.meta.env.VITE_FORMSPREE_ID as string | undefined) || 'moedezvg',
 };
 
 /** Link que abre uma conversa no WhatsApp com a mensagem já escrita. */
