@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { PiMagnifyingGlass } from 'react-icons/pi';
+import { PiMagnifyingGlass, PiMoon, PiSun } from 'react-icons/pi';
+import { useThemeMode } from '../../styles/ThemeMode';
 import { navLinks } from '../../data/navigation';
 import { useScrollSpy } from '../../hooks/useScrollSpy';
 import { useScrolled } from '../../hooks/useScrolled';
@@ -16,6 +17,7 @@ export function Header({ onOpenPalette }: HeaderProps) {
   const scrolled = useScrolled(24);
   const active = useScrollSpy(sectionIds);
   const [menuOpen, setMenuOpen] = useState(false);
+  const { mode, toggle } = useThemeMode();
   const isMac = typeof navigator !== 'undefined' && /Mac|iPhone|iPad/.test(navigator.platform);
 
   // Fecha o menu com Esc ou ao voltar para a largura de desktop
@@ -66,6 +68,14 @@ export function Header({ onOpenPalette }: HeaderProps) {
                 <span>Buscar</span>
                 <kbd>{isMac ? '⌘K' : 'Ctrl K'}</kbd>
               </S.PaletteButton>
+              <S.ThemeButton
+                type="button"
+                onClick={toggle}
+                aria-label={mode === 'dark' ? 'Mudar para o modo claro' : 'Mudar para o modo escuro'}
+                title={mode === 'dark' ? 'Modo claro' : 'Modo escuro'}
+              >
+                {mode === 'dark' ? <PiSun aria-hidden="true" /> : <PiMoon aria-hidden="true" />}
+              </S.ThemeButton>
               <S.MenuButton
                 type="button"
                 $open={menuOpen}

@@ -1,4 +1,3 @@
-import { useRef, type PointerEvent } from 'react';
 import { PiArrowDown, PiWhatsappLogo } from 'react-icons/pi';
 import { SiReact, SiStyledcomponents, SiTypescript } from 'react-icons/si';
 import profileImage from '../../assets/images/flavia.webp';
@@ -17,19 +16,10 @@ const chips = [
 
 export function Hero() {
   const role = useTypewriter(profile.taglines);
-  const backdropRef = useRef<HTMLDivElement>(null);
-
-  // Brilho que acompanha o ponteiro (só mouse; direto no estilo, sem re-renderizar)
-  const onPointerMove = (event: PointerEvent<HTMLElement>) => {
-    if (event.pointerType !== 'mouse' || !backdropRef.current) return;
-    const rect = event.currentTarget.getBoundingClientRect();
-    backdropRef.current.style.setProperty('--x', `${event.clientX - rect.left}px`);
-    backdropRef.current.style.setProperty('--y', `${event.clientY - rect.top}px`);
-  };
 
   return (
-    <S.Section id="hero" aria-labelledby="hero-title" onPointerMove={onPointerMove}>
-      <S.Backdrop ref={backdropRef} aria-hidden="true" />
+    <S.Section id="hero" aria-labelledby="hero-title">
+      <S.Backdrop aria-hidden="true" />
       <Container>
         <S.Grid>
           <S.Content>

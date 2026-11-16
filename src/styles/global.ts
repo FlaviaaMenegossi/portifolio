@@ -12,7 +12,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   :root {
-    color-scheme: dark;
+    color-scheme: ${({ theme }) => theme.mode};
     --transition-medium: 0.5s ease;
   }
 
@@ -38,6 +38,9 @@ export const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -webkit-tap-highlight-color: transparent;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
   }
 
   ::selection {
@@ -45,9 +48,36 @@ export const GlobalStyle = createGlobalStyle`
     color: ${({ theme }) => theme.colors.bgDark};
   }
 
-  /* Barra de rolagem na paleta */
-  html {
-    scrollbar-color: ${({ theme }) => theme.colors.border} ${({ theme }) => theme.colors.bgDark};
+  /* Barra de rolagem neon (degradê + brilho, igual aos botões) */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: ${({ theme }) => theme.colors.bgDark};
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+      180deg,
+      ${({ theme }) => theme.colors.primaryNeon} 0%,
+      ${({ theme }) => theme.colors.accentNeon} 100%
+    );
+    border-radius: ${({ theme }) => theme.radii.pill};
+    border: 2px solid ${({ theme }) => theme.colors.bgDark};
+    box-shadow: 0 0 10px ${({ theme }) => theme.colors.primaryNeon};
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: ${({ theme }) => theme.colors.accentNeon};
+  }
+
+  /* Firefox não aceita degradê: usa o roxo neon sólido */
+  @supports not selector(::-webkit-scrollbar) {
+    html {
+      scrollbar-color: ${({ theme }) => theme.colors.primaryNeon} ${({ theme }) => theme.colors.bgDark};
+    }
   }
 
   section {

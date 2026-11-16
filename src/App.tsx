@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { About } from './components/About';
 import { CommandPalette } from './components/CommandPalette';
 import { Contact } from './components/Contact';
+import { CursorGlow } from './components/CursorGlow';
 import { Footer } from './components/Footer';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
@@ -27,6 +28,7 @@ export function App() {
 
   return (
     <>
+      <CursorGlow />
       <ScrollProgress />
       <Header onOpenPalette={() => setPaletteOpen(true)} />
       <main id="conteudo" tabIndex={-1}>

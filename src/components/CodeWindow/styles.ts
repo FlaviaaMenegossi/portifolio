@@ -88,7 +88,7 @@ export const Line = styled.span`
   }
 
   .k {
-    color: #ff79f0;
+    color: ${({ theme }) => theme.colors.codeKeyword};
   }
   .v {
     color: ${({ theme }) => theme.colors.textWhite};
@@ -97,10 +97,10 @@ export const Line = styled.span`
     color: ${({ theme }) => theme.colors.primaryText};
   }
   .s {
-    color: #ffd479;
+    color: ${({ theme }) => theme.colors.codeString};
   }
   .b {
-    color: #7ee0ff;
+    color: ${({ theme }) => theme.colors.codeBuiltin};
   }
   .c {
     color: ${({ theme }) => theme.colors.textMuted};

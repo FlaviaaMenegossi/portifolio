@@ -87,7 +87,7 @@ export const Nav = styled.nav<{ $open: boolean }>`
     padding: 12px ${({ theme }) => theme.layout.gutterMobile} 24px;
     background: ${({ theme }) => theme.colors.bgDark};
     border-bottom: 1px solid ${({ theme }) => rgba(theme.colors.primaryNeon, 0.14)};
-    box-shadow: 0 24px 40px -20px rgba(0, 0, 0, 0.8);
+    box-shadow: ${({ theme }) => theme.shadows.overlay};
     transform-origin: top center;
     transition:
       opacity 0.25s ease,
@@ -214,6 +214,39 @@ export const PaletteButton = styled.button`
     svg {
       width: 20px;
       height: 20px;
+    }
+  }
+`;
+
+/* Botão sol/lua: mesmo visual do botão de busca, só com o ícone */
+export const ThemeButton = styled.button`
+  display: inline-grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  flex: none;
+  border-radius: 50%;
+  border: 1px solid ${({ theme }) => theme.colors.border};
+  background: ${({ theme }) => rgba(theme.colors.bgCard, 0.8)};
+  color: ${({ theme }) => theme.colors.textMuted};
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease;
+
+  svg {
+    width: 19px;
+    height: 19px;
+    transition: transform 0.4s ${({ theme }) => theme.easing.out};
+  }
+
+  &:hover {
+    color: ${({ theme }) => theme.colors.primaryText};
+    border-color: ${({ theme }) => rgba(theme.colors.primaryNeon, 0.6)};
+    box-shadow: 0 0 12px ${({ theme }) => rgba(theme.colors.primaryNeon, 0.35)};
+
+    svg {
+      transform: rotate(-20deg);
     }
   }
 `;

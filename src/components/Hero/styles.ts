@@ -47,7 +47,7 @@ export const Section = styled.section`
   }
 `;
 
-/* Grade de pontos que some nas bordas + brilho que segue o ponteiro (--x/--y) */
+/* Grade de pontos que some nas bordas + luzes fixas (o brilho do mouse vem do CursorGlow, global) */
 export const Backdrop = styled.div`
   position: absolute;
   inset: 0;
@@ -72,7 +72,6 @@ export const Backdrop = styled.div`
     position: absolute;
     inset: 0;
     background:
-      radial-gradient(520px circle at var(--x, 70%) var(--y, 35%), ${({ theme }) => rgba(theme.colors.primaryNeon, 0.16)}, transparent 60%),
       radial-gradient(40% 50% at 85% 20%, ${({ theme }) => rgba(theme.colors.secondaryNeon, 0.22)}, transparent 70%),
       radial-gradient(35% 45% at 5% 95%, ${({ theme }) => rgba(theme.colors.accentNeon, 0.08)}, transparent 70%);
   }

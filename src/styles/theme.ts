@@ -1,5 +1,5 @@
-// Neon Purple Palette
-const colors = {
+// Paleta neon roxa: o tema escuro é o original; o claro usa a mesma marca sobre fundo lavanda
+const darkColors = {
   primaryNeon: '#bc13fe',
   secondaryNeon: '#7a16f0',
   accentNeon: '#ff00ff',
@@ -14,9 +14,36 @@ const colors = {
   textMuted: '#a7a0b0',
   success: '#4fd1a5',
   danger: '#ff8fab',
+  // Cores do código na janela "flavia.ts"
+  codeKeyword: '#ff79f0',
+  codeString: '#ffd479',
+  codeBuiltin: '#7ee0ff',
 };
 
-export const theme = {
+type Colors = typeof darkColors;
+
+// No tema claro os nomes continuam os mesmos (textWhite = cor do texto principal, bgDark = fundo da página)
+const lightColors: Colors = {
+  primaryNeon: '#bc13fe',
+  secondaryNeon: '#7a16f0',
+  accentNeon: '#d400d4',
+  primaryText: '#8a0ec0',
+  bgDark: '#f7f3fb',
+  bgCard: '#ffffff',
+  bgRaised: '#f0e9f7',
+  border: '#e2d7ee',
+  textWhite: '#17111d',
+  textSoft: '#3b3146',
+  textMuted: '#5f5569',
+  success: '#0f7a58',
+  danger: '#c2185b',
+  codeKeyword: '#b0009e',
+  codeString: '#9a5b00',
+  codeBuiltin: '#00739a',
+};
+
+const buildTheme = (mode: 'dark' | 'light', colors: Colors) => ({
+  mode,
   colors,
 
   // Gradients
@@ -38,10 +65,18 @@ export const theme = {
     pill: '999px',
   },
 
-  shadows: {
-    card: '0 20px 40px -24px rgba(122, 22, 240, 0.45)',
-    lift: '0 24px 48px -20px rgba(188, 19, 254, 0.45)',
-  },
+  shadows:
+    mode === 'dark'
+      ? {
+          card: '0 20px 40px -24px rgba(122, 22, 240, 0.45)',
+          lift: '0 24px 48px -20px rgba(188, 19, 254, 0.45)',
+          overlay: '0 24px 40px -20px rgba(0, 0, 0, 0.8)',
+        }
+      : {
+          card: '0 20px 40px -24px rgba(122, 22, 240, 0.28)',
+          lift: '0 24px 48px -20px rgba(188, 19, 254, 0.32)',
+          overlay: '0 24px 40px -20px rgba(60, 20, 90, 0.25)',
+        },
 
   layout: {
     maxWidth: '1200px',
@@ -67,6 +102,13 @@ export const theme = {
     desktop: '992px',
     large: '1200px',
   },
-};
+});
 
-export type Theme = typeof theme;
+export type Theme = ReturnType<typeof buildTheme>;
+export type ThemeMode = Theme['mode'];
+
+export const darkTheme = buildTheme('dark', darkColors);
+export const lightTheme = buildTheme('light', lightColors);
+
+/** Tema padrão (escuro) */
+export const theme = darkTheme;
