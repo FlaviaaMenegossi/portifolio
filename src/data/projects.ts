@@ -1,7 +1,7 @@
 import agendaContato from '../assets/images/projects/agenda-contato.webp';
 import calculadoraImc from '../assets/images/projects/calculadora-imc.webp';
-import cloneDisneyPlus from '../assets/images/projects/clone-disneyplus.webp';
 import divertidamente from '../assets/images/projects/divertidamente.webp';
+import efood from '../assets/images/projects/efood.webp';
 import emailMarketingNike from '../assets/images/projects/email-marketing-nike.webp';
 import eventoAniversario from '../assets/images/projects/evento-aniversario.webp';
 
@@ -43,12 +43,13 @@ export const projects: Project[] = [
     repo: 'https://github.com/FlaviaaMenegossi/divertidamente',
   },
   {
-    title: 'Clone Disney+',
-    description: 'Página inicial inspirada no Disney+, com seção de planos e layout responsivo.',
-    stack: ['HTML', 'Sass', 'JavaScript', 'Gulp'],
-    image: cloneDisneyPlus,
-    link: 'https://clone-disneyplus-zeta-one.vercel.app',
-    repo: 'https://github.com/FlaviaaMenegossi/clone_disneyplus',
+    title: 'eFood',
+    description:
+      'Delivery de massas artesanais com cardápio, carrinho com cupons e promoções, e checkout em etapas com validação.',
+    stack: ['React', 'TypeScript', 'styled-components', 'React Router'],
+    image: efood,
+    link: 'https://projeto-efood-sable.vercel.app',
+    repo: 'https://github.com/FlaviaaMenegossi/projeto-efood',
   },
   {
     title: 'E-mail Marketing Nike',
